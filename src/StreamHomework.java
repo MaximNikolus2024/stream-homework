@@ -4,6 +4,7 @@ import java.util.List;
 public class StreamHomework {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
+
         list.add(15);
         list.add(40);
         list.add(20);
@@ -16,5 +17,14 @@ public class StreamHomework {
         list.add(113);
         list.add(220);
         list.add(48565);
+
+         int sum = list.stream()
+                .mapToInt(i -> i + 15)
+                .filter(i -> i > 50)
+                .sum();
+
+        System.out.println("Сумма чисел: " + sum);
+
+
     }
 }
